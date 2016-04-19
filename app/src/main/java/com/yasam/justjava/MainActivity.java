@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given quantity value on the screen.
      */
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(
+        TextView txtVw_quantity = (TextView) findViewById(
                 R.id.txtVw_quantity);
-        if (quantityTextView != null) {
-            quantityTextView.setText(String.format(Locale.getDefault(), "%d", number));
+        if (txtVw_quantity != null) {
+            txtVw_quantity.setText(String.format(Locale.getDefault(), "%d", number));
         }
     }
 
