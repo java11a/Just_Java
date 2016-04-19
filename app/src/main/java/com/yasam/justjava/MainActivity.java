@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void submitOrder(View view) {
+    public void submitOrders(View view) {
         int quantity = 3;
         display(quantity);
 
