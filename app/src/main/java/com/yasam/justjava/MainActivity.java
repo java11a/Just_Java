@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +27,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method displays on the screen the total price value for the quantity value.
+     */
+    private void displayPrice(int price) {
+        TextView txtVw_price = (TextView) findViewById(
+                R.id.txtVw_price);
+        if (txtVw_price != null) {
+            txtVw_price.setText(NumberFormat.getCurrencyInstance().format(price));
+        }
+    }
+
     public void submitOrder(View view) {
         display(10);
+
+        displayPrice(10 * 5);
     }
 }
