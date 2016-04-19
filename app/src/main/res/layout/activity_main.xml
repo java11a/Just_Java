@@ -31,5 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Order"
+        android:onClick="submitOrder"
         android:layout_marginTop="@dimen/activity_horizontal_margin"/>
 </LinearLayout>
