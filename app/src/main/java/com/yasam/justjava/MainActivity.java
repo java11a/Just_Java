@@ -63,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
      * @param view Order button ref.
      */
     public void submitOrder(View view) {
-        int quantity = 3;
-        display(quantity);
-
-        displayPrice(quantity * 5);
+        displayPrice(mQuantity * 5);
     }
 }
