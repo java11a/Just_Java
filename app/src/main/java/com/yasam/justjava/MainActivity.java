@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view Decrement (minus) quantity button ref.
      */
     public void decrement(View view) {
-        int quantity = 1;
+        int quantity = 2;
+        quantity = quantity + 1;
         display(quantity);
     }
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         int quantity = 3;
+        quantity = quantity - 1;
         display(quantity);
     }
 
