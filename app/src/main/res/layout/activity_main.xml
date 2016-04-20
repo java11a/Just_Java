@@ -18,14 +18,25 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="-"
+        android:onClick="decrement" />
 
     <TextView
         android:id="@+id/txtVw_quantity"
-        android:text="0"
+        android:text="2"
         android:textSize="16sp"
         android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="+"
+        android:onClick="increment" />
 
     <TextView
         android:text="Price"
@@ -35,10 +46,9 @@
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         />
 
-
     <TextView
         android:id="@+id/txtVw_price"
-        android:text="$0"
+        android:text="$10"
         android:textSize="16sp"
         android:textColor="@android:color/black"
         android:layout_width="wrap_content"

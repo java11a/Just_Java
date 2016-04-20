@@ -38,7 +38,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void submitOrders(View view) {
+    /**
+     * Decrement (minus) quantity button click event handler
+     * @param view Decrement (minus) quantity button ref.
+     */
+    public void decrement(View view) {
+        int quantity = 1;
+        display(quantity);
+    }
+
+    /**
+     * Increment (plus) quantity button click event handler
+     * @param view Increment (plus) quantity button ref.
+     */
+    public void increment(View view) {
+        int quantity = 3;
+        display(quantity);
+    }
+
+    /**
+     * Order button click event handler
+     * @param view Order button ref.
+     */
+    public void submitOrder(View view) {
         int quantity = 3;
         display(quantity);
 
