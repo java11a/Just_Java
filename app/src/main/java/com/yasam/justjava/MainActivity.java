@@ -10,6 +10,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    int mQuantity = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given quantity value on the screen.
+     * This method displays the given mQuantity value on the screen.
      */
     private void display(int number) {
         TextView txtVw_quantity = (TextView) findViewById(
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays on the screen the total price value for the quantity value.
+     * This method displays on the screen the total price value for the mQuantity value.
      */
     private void displayPrice(int price) {
         TextView txtVw_price = (TextView) findViewById(
@@ -39,23 +41,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Decrement (minus) quantity button click event handler
-     * @param view Decrement (minus) quantity button ref.
+     * Decrement (minus) mQuantity button click event handler
+     * @param view Decrement (minus) mQuantity button ref.
      */
     public void decrement(View view) {
-        int quantity = 2;
-        quantity = quantity + 1;
-        display(quantity);
+        mQuantity++;
+        display(mQuantity);
     }
 
     /**
-     * Increment (plus) quantity button click event handler
-     * @param view Increment (plus) quantity button ref.
+     * Increment (plus) mQuantity button click event handler
+     * @param view Increment (plus) mQuantity button ref.
      */
     public void increment(View view) {
-        int quantity = 3;
-        quantity = quantity - 1;
-        display(quantity);
+        mQuantity--;
+        display(mQuantity);
     }
 
     /**
