@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays on the screen the total price value for the mQuantity value.
+     * This method displays the total price value for the quantity value.
      */
     private void displayPrice(int price) {
         TextView txtVw_price = (TextView) findViewById(
@@ -41,20 +41,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Decrement (minus) mQuantity button click event handler
+     * This method displays the total price value for the quantity value.
+     */
+    private void displayMessage(String priceMessage) {
+        TextView txtVw_price = (TextView) findViewById(
+                R.id.txtVw_price);
+        if (txtVw_price != null) {
+            txtVw_price.setText(priceMessage);
+        }
+    }
+
+    /**
+     * Decrement (minus) quantity button click event handler
      * @param view Decrement (minus) mQuantity button ref.
      */
     public void decrement(View view) {
-        mQuantity++;
+        mQuantity--;
         display(mQuantity);
     }
 
     /**
-     * Increment (plus) mQuantity button click event handler
+     * Increment (plus) quantity button click event handler
      * @param view Increment (plus) mQuantity button ref.
      */
     public void increment(View view) {
-        mQuantity--;
+        mQuantity++;
         display(mQuantity);
     }
 
@@ -63,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view Order button ref.
      */
     public void submitOrder(View view) {
-        displayPrice(mQuantity * 5);
+        int price = mQuantity * 5;
+        String priceMessage = "Total: " + NumberFormat.getCurrencyInstance().format(price);
+        priceMessage += "\nThank you!";
+
+        displayMessage(priceMessage);
     }
 }
