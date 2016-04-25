@@ -30,24 +30,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the total price value for the quantity value.
+     * This method displays the order summary.
      */
-    private void displayPrice(int price) {
-        TextView txtVw_price = (TextView) findViewById(
-                R.id.txtVw_price);
-        if (txtVw_price != null) {
-            txtVw_price.setText(NumberFormat.getCurrencyInstance().format(price));
-        }
-    }
-
-    /**
-     * This method displays the total price value for the quantity value.
-     */
-    private void displayMessage(String priceMessage) {
-        TextView txtVw_price = (TextView) findViewById(
-                R.id.txtVw_price);
-        if (txtVw_price != null) {
-            txtVw_price.setText(priceMessage);
+    private void displayMessage(String orderSummaryMsg) {
+        TextView txtVw_orderSummary = (TextView) findViewById(
+                R.id.txtVw_orderSummary);
+        if (txtVw_orderSummary != null) {
+            txtVw_orderSummary.setText(orderSummaryMsg);
         }
     }
 
