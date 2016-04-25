@@ -64,9 +64,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = mQuantity * 5;
-        String priceMessage = "Total: " + NumberFormat.getCurrencyInstance().format(price);
-        priceMessage += "\nThank you!";
 
-        displayMessage(priceMessage);
+        String orderSummaryMsg = createOrderSummary(price);
+        displayMessage(orderSummaryMsg);
+    }
+
+    /**
+     * Creates summary of the order
+     *
+     * @param price of the order
+     * @return text summary
+     */
+    private String createOrderSummary(int price) {
+        String orderSummaryMsg = "Name: Yuri Granovsky";
+        orderSummaryMsg += "\nQuantity: " + mQuantity;
+        orderSummaryMsg += "\nTotal: " + NumberFormat.getCurrencyInstance().format(price);
+        orderSummaryMsg += "\nThank you!";
+        return orderSummaryMsg;
     }
 }
