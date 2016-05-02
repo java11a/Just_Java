@@ -2,6 +2,7 @@ package com.yasam.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -67,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         int price = mQuantity * 5;
         CheckBox chkBx_whipedCream = (CheckBox) findViewById(R.id.chkBx_whippedCream);
         boolean hasWhippedCream = chkBx_whipedCream.isChecked();
+        Log.v(this.getClass().getSimpleName(), "Has whipped cream: " + hasWhippedCream);
+
 
         String orderSummaryMsg = createOrderSummary(price, hasWhippedCream);
         displayMessage(orderSummaryMsg);
