@@ -12,6 +12,21 @@
     tools:context="com.yasam.justjava.MainActivity">
 
     <TextView
+        android:text="Toppings"
+        android:textAllCaps="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Whipped Cream"
+        android:textSize="16sp"
+        android:paddingLeft="24dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
         android:text="Quantity"
         android:textAllCaps="true"
         android:layout_width="wrap_content"
