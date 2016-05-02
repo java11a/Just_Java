@@ -7,13 +7,16 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    int mQuantity = 0;
+    final int QUANTITY_MIN = 1;
+    final int QUANTITY_MAX = 100;
+    int mQuantity = QUANTITY_MIN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view Decrement (minus) mQuantity button ref.
      */
     public void decrement(View view) {
-        mQuantity--;
+        if(mQuantity==QUANTITY_MIN)
+            Toast.makeText(this, "You cannot order less than " + QUANTITY_MIN + " coffee cup", Toast.LENGTH_SHORT).show();
+        else
+            mQuantity--;
+
         display(mQuantity);
     }
 
@@ -57,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view Increment (plus) mQuantity button ref.
      */
     public void increment(View view) {
-        mQuantity++;
+        if(mQuantity==QUANTITY_MAX)
+            Toast.makeText(this, "You cannot order more than " + QUANTITY_MAX + " coffees cups", Toast.LENGTH_SHORT).show();
+        else
+            mQuantity++;
+
         display(mQuantity);
     }
 
