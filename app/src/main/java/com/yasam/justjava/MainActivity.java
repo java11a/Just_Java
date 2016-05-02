@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view Order button ref.
      */
     public void submitOrder(View view) {
-        int price = mQuantity * 5;
+
         CheckBox chkBx_whipedCream = (CheckBox) findViewById(R.id.chkBx_whippedCream);
         boolean hasWhippedCream = chkBx_whipedCream.isChecked();
         Log.v(this.getClass().getSimpleName(), "Has whipped cream: " + hasWhippedCream);
@@ -74,16 +74,43 @@ public class MainActivity extends AppCompatActivity {
         boolean hasChocolate = chkBx_chocolate.isChecked();
         Log.v(this.getClass().getSimpleName(), "Has chocolate: " + hasChocolate);
 
+        int price = calculatePrice(mQuantity, hasWhippedCream, hasChocolate);
+
         String orderSummaryMsg = createOrderSummary(price, hasWhippedCream, hasChocolate);
         displayMessage(orderSummaryMsg);
+    }
+
+    /**
+     * Calculates total price of the order
+     *
+     * @param quantity of the order
+     * @param addWhippedCream
+     * @param addChocolate  @return text summary
+     */
+    private int calculatePrice(int quantity, boolean addWhippedCream, boolean addChocolate) {
+        final int PRICE_COFFEE_CUP = 5;
+        final int PRICE_CHOCOLATE = 2;
+        final int PRICE_WHIPPER_CREAM = 1;
+
+        int price = PRICE_COFFEE_CUP;
+
+        //Add if the user wants whipper cream
+        if(addWhippedCream)
+            price += PRICE_WHIPPER_CREAM;
+
+        //Add if the user wants chocolate
+        if(addChocolate)
+            price += PRICE_CHOCOLATE;
+
+        return price * quantity;
     }
 
     /**
      * Creates summary of the order
      *
      * @param price of the order
-     * @param whippedCream
-     *@param hasWhippedCream  @return text summary
+     * @param addWhippedCream
+     * @param addChocolate  @return text summary
      */
     private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate) {
         String orderSummaryMsg = "Name: Yuri Granovsky";
