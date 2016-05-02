@@ -3,6 +3,7 @@ package com.yasam.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -64,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = mQuantity * 5;
+        CheckBox chkBx_whipedCream = (CheckBox) findViewById(R.id.chkBx_whippedCream);
+        boolean hasWhippedCream = chkBx_whipedCream.isChecked();
 
-        String orderSummaryMsg = createOrderSummary(price);
+        String orderSummaryMsg = createOrderSummary(price, hasWhippedCream);
         displayMessage(orderSummaryMsg);
     }
 
@@ -73,10 +76,12 @@ public class MainActivity extends AppCompatActivity {
      * Creates summary of the order
      *
      * @param price of the order
+     * @param hasWhippedCream
      * @return text summary
      */
-    private String createOrderSummary(int price) {
+    private String createOrderSummary(int price, boolean hasWhippedCream) {
         String orderSummaryMsg = "Name: Yuri Granovsky";
+        orderSummaryMsg += "\nAdd whipped cream? " + hasWhippedCream;
         orderSummaryMsg += "\nQuantity: " + mQuantity;
         orderSummaryMsg += "\nTotal: " + NumberFormat.getCurrencyInstance().format(price);
         orderSummaryMsg += "\nThank you!";

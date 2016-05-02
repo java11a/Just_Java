@@ -19,6 +19,7 @@
         android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
     <CheckBox
+        android:id="@+id/chkBx_whippedCream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Whipped Cream"
