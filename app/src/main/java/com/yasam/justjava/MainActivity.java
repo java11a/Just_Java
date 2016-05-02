@@ -70,8 +70,11 @@ public class MainActivity extends AppCompatActivity {
         boolean hasWhippedCream = chkBx_whipedCream.isChecked();
         Log.v(this.getClass().getSimpleName(), "Has whipped cream: " + hasWhippedCream);
 
+        CheckBox chkBx_chocolate = (CheckBox) findViewById(R.id.chkBx_chocolate);
+        boolean hasChocolate = chkBx_chocolate.isChecked();
+        Log.v(this.getClass().getSimpleName(), "Has chocolate: " + hasChocolate);
 
-        String orderSummaryMsg = createOrderSummary(price, hasWhippedCream);
+        String orderSummaryMsg = createOrderSummary(price, hasWhippedCream, hasChocolate);
         displayMessage(orderSummaryMsg);
     }
 
@@ -79,12 +82,13 @@ public class MainActivity extends AppCompatActivity {
      * Creates summary of the order
      *
      * @param price of the order
-     * @param hasWhippedCream
-     * @return text summary
+     * @param whippedCream
+     *@param hasWhippedCream  @return text summary
      */
-    private String createOrderSummary(int price, boolean hasWhippedCream) {
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate) {
         String orderSummaryMsg = "Name: Yuri Granovsky";
-        orderSummaryMsg += "\nAdd whipped cream? " + hasWhippedCream;
+        orderSummaryMsg += "\nAdd whipped cream? " + addWhippedCream;
+        orderSummaryMsg += "\nAdd chocolate? " + addChocolate;
         orderSummaryMsg += "\nQuantity: " + mQuantity;
         orderSummaryMsg += "\nTotal: " + NumberFormat.getCurrencyInstance().format(price);
         orderSummaryMsg += "\nThank you!";
