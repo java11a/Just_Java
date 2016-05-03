@@ -1,5 +1,7 @@
 package com.yasam.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -32,17 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 R.id.txtVw_quantity);
         if (txtVw_quantity != null) {
             txtVw_quantity.setText(String.format(Locale.getDefault(), "%d", number));
-        }
-    }
-
-    /**
-     * This method displays the order summary.
-     */
-    private void displayMessage(String orderSummaryMsg) {
-        TextView txtVw_orderSummary = (TextView) findViewById(
-                R.id.txtVw_orderSummary);
-        if (txtVw_orderSummary != null) {
-            txtVw_orderSummary.setText(orderSummaryMsg);
         }
     }
 
@@ -94,7 +85,18 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice(mQuantity, hasWhippedCream, hasChocolate);
 
         String orderSummaryMsg = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
-        displayMessage(orderSummaryMsg);
+
+        Intent orderSummaryIntent = new Intent(Intent.ACTION_SENDTO);
+        orderSummaryIntent.setData(Uri.parse("mailto:"));
+        orderSummaryIntent.putExtra(Intent.EXTRA_SUBJECT
+                , getApplicationInfo().loadLabel(getPackageManager()).toString()
+        + " order for " + name);
+        orderSummaryIntent.putExtra(Intent.EXTRA_TEXT, orderSummaryMsg);
+
+
+        if(orderSummaryIntent.resolveActivity(getPackageManager()) != null){
+            startActivity(orderSummaryIntent);
+        }
     }
 
     /**
