@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">פשוט Java</string>
+
+    <!-- Hint text display in the empty field for the user's name [CHAR LIMIT=20] -->
+    <string name="name_entry_hint">שם מלא</string>
+
+    <!-- Title of the block for the coffee extras [CHAR LIMIT=20] -->
+    <string name="extras_title">תוספות</string>
+
+    <!-- Name of the first extra [CHAR LIMIT=20] -->
+    <string name="extra_first">קצפת</string>
+
+    <!-- Name of the first extra [CHAR LIMIT=20] -->
+    <string name="extra_second">שוקולד</string>
+
+    <!-- Title of the block for the coffee quantity [CHAR LIMIT=20] -->
+    <string name="quantity_title">כמות</string>
+
+    <!-- Order button title [CHAR LIMIT=20] -->
+    <string name="order_title">הזמין</string>
+
+    <!--
+        Subject line for the order summary email. It will be in the format of
+        "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_email_subject">
+        <xliff:g id="name" example="Amy">%s</xliff:g> הזמנה עבור <xliff:g id="app_name" example="Just Java">%s</xliff:g>
+    </string>
+
+    <!--
+      Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
+      user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_name">שם מלא: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+
+    <!--
+      Whipped cream topping for the order summary. It will be shown in the format of
+      "Add whipped cream? yes" or "Add whipped cream? no". [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_whipped_cream">\nלהוסיף קצפת? %s</string>
+
+    <!--
+      Chocolate topping for the order summary. It will be shown in the format of
+      "Add chocolate? true" or "Add chocolate? false". [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_chocolate">\nלהוסיף שוקולד? %s</string>
+
+    <!--
+          Quantity of coffee cups for the order summary. It will be shown in the format of
+          "Quantity: 2 coffee cups ", where 2 coffee cups is the string with amount of
+          ordered cups. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_quantity">\nכמות: <xliff:g id="quantity" example="2 כוסות קפה">%s</xliff:g></string>
+
+    <!--
+      Total price for the order summary. It will be shown in the format of
+      "Total: $10" where $10 is the price. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_price">\nסה"כ: <xliff:g id="price" example="$10">%s</xliff:g></string>
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="thank_you">\nתודה רבה!</string>
+
+    <!-- Answer yes. [CHAR LIMIT=NONE] -->
+    <string name="answer_yes">כן</string>
+
+    <!-- Answer no. [CHAR LIMIT=NONE] -->
+    <string name="answer_no">לא</string>
+
+    <!--
+        Error message for decrement less than minimal quantity to order. It will be shown in the format of
+        "You cannot order less than 2 coffee cups", where 2 coffee cups is the string with amount of
+        ordered cups. [CHARS LIMIT=NONE]
+    -->
+    <string name="err_msg_decrement">אינך יכול להזמין פחות מ-<xliff:g id="quantity" example="2 כוסות קפה">%s</xliff:g></string>
+
+    <!--
+        Error message for decrement more than maximal quantity to order. It will be shown in the format of
+        "You cannot order more than 11 coffee cups", where 11 coffee cups is the string with amount of
+        ordered cups. [CHARS LIMIT=NONE]
+    -->
+    <string name="err_msg_increment">אינך יכול להזמין יותר מ-<xliff:g id="quantity" example="11 כוסות קפה">%s</xliff:g></string>
+
+    <!--
+     Provides cups quantity string depending on the amount of the coffee cups. It will be shown in the format of
+      "1 coffee cup" for one or "11 coffee cups" for more then one [CHARS LIMIT=NONE] -->
+    <plurals name="numOfCoffeeCups">
+        <item quantity="one">%d כוס קפה</item>
+        <item quantity="two">%d כוסות קפה</item>
+        <item quantity="many">%d כוסות קפה</item>
+        <item quantity="other">%d כוסות קפה</item>
+    </plurals>
+
+</resources>
