@@ -1,3 +1,24 @@
 <resources>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Just Java</string>
+
+    <!-- Hint text display in the empty field for the user's name [CHAR LIMIT=20] -->
+    <string name="name_entry_hint">Name</string>
+
+    <!-- Title of the block for the coffee extras [CHAR LIMIT=20] -->
+    <string name="extras_title">Toppings</string>
+
+    <!-- Name of the first extra [CHAR LIMIT=20] -->
+    <string name="extra_first">Whipped cream</string>
+
+    <!-- Name of the first extra [CHAR LIMIT=20] -->
+    <string name="extra_second">Chocolate</string>
+
+    <!-- Title of the block for the coffee quantity [CHAR LIMIT=20] -->
+    <string name="quantity_title">Quantity</string>
+
+    <!-- Order button title [CHAR LIMIT=20] -->
+    <string name="order_title">Order</string>
+    <string name="decrement_title">-</string>
+    <string name="increment_title">+</string>
 </resources>
