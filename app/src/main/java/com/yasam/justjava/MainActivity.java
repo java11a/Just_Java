@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         if(mQuantity==QUANTITY_MAX)
-            Toast.makeText(this, "You cannot order more than " + QUANTITY_MAX + " coffees cups", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,  "You cannot order more than " + QUANTITY_MAX + " coffees cups", Toast.LENGTH_SHORT).show();
         else
             mQuantity++;
 
@@ -68,19 +67,25 @@ public class MainActivity extends AppCompatActivity {
      * @param view Order button ref.
      */
     public void submitOrder(View view) {
+        //
+        String name = null;
+        boolean hasWhippedCream = false;
+        boolean hasChocolate =false;
+
+
         EditText txtEd_name = (EditText) findViewById(R.id.txtEd_name);
-        String name = txtEd_name.getText().toString();
-        Log.v(getClass().getSimpleName(), "Name: " + name);
+        if(txtEd_name!=null)
+            name = txtEd_name.getText().toString();
 
         //Figure out if the user wants whipped cream topping
         CheckBox chkBx_whipedCream = (CheckBox) findViewById(R.id.chkBx_whippedCream);
-        boolean hasWhippedCream = chkBx_whipedCream.isChecked();
-        Log.v(getClass().getSimpleName(), "Has whipped cream: " + hasWhippedCream);
+        if(chkBx_whipedCream!=null)
+            hasWhippedCream = chkBx_whipedCream.isChecked();
 
         //Figure out if the user wants chocolate topping
         CheckBox chkBx_chocolate = (CheckBox) findViewById(R.id.chkBx_chocolate);
-        boolean hasChocolate = chkBx_chocolate.isChecked();
-        Log.v(getClass().getSimpleName(), "Has chocolate: " + hasChocolate);
+        if(chkBx_chocolate!=null)
+            hasChocolate = chkBx_chocolate.isChecked();
 
         int price = calculatePrice(mQuantity, hasWhippedCream, hasChocolate);
 
@@ -89,8 +94,7 @@ public class MainActivity extends AppCompatActivity {
         Intent orderSummaryIntent = new Intent(Intent.ACTION_SENDTO);
         orderSummaryIntent.setData(Uri.parse("mailto:"));
         orderSummaryIntent.putExtra(Intent.EXTRA_SUBJECT
-                , getApplicationInfo().loadLabel(getPackageManager()).toString()
-        + " order for " + name);
+                ,getString(R.string.order_summary_email_subject, getApplicationInfo().loadLabel(getPackageManager()).toString(), name));
         orderSummaryIntent.putExtra(Intent.EXTRA_TEXT, orderSummaryMsg);
 
 
@@ -103,8 +107,9 @@ public class MainActivity extends AppCompatActivity {
      * Calculates total price of the order
      *
      * @param quantity of the order
-     * @param addWhippedCream
-     * @param addChocolate  @return text summary
+     * @param addWhippedCream to add the whipped cream
+     * @param addChocolate to add the chocolate
+     * @return text summary
      */
     private int calculatePrice(int quantity, boolean addWhippedCream, boolean addChocolate) {
         final int PRICE_COFFEE_CUP = 5;
@@ -130,15 +135,20 @@ public class MainActivity extends AppCompatActivity {
      * @param name
      * @param price of the order
      * @param addWhippedCream
-     * @param addChocolate  @return text summary
+     * @param addChocolate
+     * @return text summary
      */
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
-        String orderSummaryMsg = "Name: " + name;
-        orderSummaryMsg += "\nAdd whipped cream? " + addWhippedCream;
-        orderSummaryMsg += "\nAdd chocolate? " + addChocolate;
-        orderSummaryMsg += "\nQuantity: " + mQuantity;
-        orderSummaryMsg += "\nTotal: " + NumberFormat.getCurrencyInstance().format(price);
-        orderSummaryMsg += "\nThank you!";
-        return orderSummaryMsg;
+        StringBuilder strBldr = new StringBuilder();
+
+        if(name!=null)
+            strBldr.append(getString(R.string.order_summary_name, name));
+        
+        strBldr.append(getString(R.string.order_summary_whipped_cream, getString(addWhippedCream ? R.string.answer_yes : R.string.answer_no)));
+        strBldr.append(getString(R.string.order_summary_chocolate, getString(addChocolate ? R.string.answer_yes : R.string.answer_no)));
+        strBldr.append(getString(R.string.order_summary_quantity, getResources().getQuantityString(R.plurals.numOfCoffeeCups, mQuantity, mQuantity)));
+        strBldr.append(getString(R.string.order_summary_price, NumberFormat.getCurrencyInstance().format(price)));
+        strBldr.append(getString(R.string.thank_you));
+        return strBldr.toString();
     }
 }

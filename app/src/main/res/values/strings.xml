@@ -1,4 +1,7 @@
-<resources>
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+
     <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Just Java</string>
 
@@ -17,8 +20,77 @@
     <!-- Title of the block for the coffee quantity [CHAR LIMIT=20] -->
     <string name="quantity_title">Quantity</string>
 
+
+    <string name="decrement_title">-</string>
+
+
+    <string name="increment_title">+</string>
+
     <!-- Order button title [CHAR LIMIT=20] -->
     <string name="order_title">Order</string>
-    <string name="decrement_title">-</string>
-    <string name="increment_title">+</string>
+
+    <!--
+      Subject line for the order summary email. It will be in the format of
+      "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_email_subject">
+        <xliff:g id="app_name" example="Just Java">%s</xliff:g> order for <xliff:g id="name" example="Amy">%s</xliff:g>
+    </string>
+
+    <!--
+      Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
+      user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_name">
+        Name: <xliff:g id="name" example="Amy">%s</xliff:g>
+    </string>
+
+    <!--
+      Whipped cream topping for the order summary. It will be shown in the format of
+      "Add whipped cream? yes" or "Add whipped cream? no". [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_whipped_cream">
+        \nAdd whipped cream? %s
+    </string>
+
+    <!--
+      Chocolate topping for the order summary. It will be shown in the format of
+      "Add chocolate? true" or "Add chocolate? false". [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_chocolate">
+        \nAdd chocolate? %s
+    </string>
+
+    <!--
+      Quantity of coffee cups for the order summary. It will be shown in the format of
+      "Quantity: 2", where 2 is the number of cups ordered. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_quantity">
+        \nQuantity: <xliff:g id="quantity" example="2 cups">%s</xliff:g>
+    </string>
+
+    <!--
+      Total price for the order summary. It will be shown in the format of
+      "Total: $10" where $10 is the price. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_price">
+        \nTotal: <xliff:g id="price" example="$10">%s</xliff:g>
+    </string>
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="thank_you">
+        \nThank you!
+    </string>
+
+    <!-- Answer yes. [CHAR LIMIT=NONE] -->
+    <string name="answer_yes">yes</string>
+
+    <!-- Answer no. [CHAR LIMIT=NONE] -->
+    <string name="answer_no">no</string>
+
+    <!-- Provides cups quantity string depending on the amount of the coffee cups -->
+    <plurals name="numOfCoffeeCups">
+        <item quantity="one">%d cup</item>
+        <item quantity="other">%d cups</item>
+    </plurals>
 </resources>
