@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Просто Java</string>
+
+    <!-- Answer no. [CHAR LIMIT=NONE] -->
+    <string name="answer_no">нет</string>
+
+    <!-- Answer yes. [CHAR LIMIT=NONE] -->
+    <string name="answer_yes">да</string>
+
+    <!--
+        Error message for decrement less than minimal quantity to order. It will be shown in the format of
+        "You cannot order less than 2 coffee cups", where 2 coffee cups is the string with amount of
+        ordered cups. [CHARS LIMIT=NONE]
+    -->
+    <string name="err_msg_decrement">Вы не можете заказать менее чем <xliff:g id="quantity" example="2 coffee cups">%s</xliff:g></string>
+
+    <!--
+     Error message for decrement more than maximal quantity to order. It will be shown in the format of
+     "You cannot order more than 11 coffee cups", where 11 coffee cups is the string with amount of
+     ordered cups. [CHARS LIMIT=NONE]
+    -->
+    <string name="err_msg_increment">Вы не можете заказать более чем <xliff:g id="quantity" example="11 coffee cups">%s</xliff:g></string>
+
+    <!-- Name of the first extra [CHAR LIMIT=20] -->
+    <string name="extra_first">Взбитые сливки</string>
+
+    <!-- Name of the first extra [CHAR LIMIT=20] -->
+    <string name="extra_second">Шоколад</string>
+
+    <!-- Title of the block for the coffee extras [CHAR LIMIT=20] -->
+    <string name="extras_title">Добавки</string>
+
+    <!-- Hint text display in the empty field for the user's name [CHAR LIMIT=20] -->
+    <string name="name_entry_hint">Имя</string>
+
+    <!--
+      Chocolate topping for the order summary. It will be shown in the format of
+      "Add chocolate? true" or "Add chocolate? false". [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_chocolate">\nДобавить шоколад? %s</string>
+
+    <!--
+      Whipped cream topping for the order summary. It will be shown in the format of
+      "Add whipped cream? yes" or "Add whipped cream? no". [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_whipped_cream">\nДобавить взбитые сливки? %s</string>
+
+    <!-- Order button title [CHAR LIMIT=20] -->
+    <string name="order_title">Заказать</string>
+
+    <!-- Title of the block for the coffee quantity [CHAR LIMIT=20] -->
+    <string name="quantity_title">Количество</string>
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="thank_you">\nБольшое спасибо!</string>
+
+    <!--
+      Subject line for the order summary email. It will be in the format of
+      "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_email_subject"><xliff:g id="app_name" example="Just Java">%s</xliff:g> заказ для <xliff:g id="name" example="Amy">%s</xliff:g></string>
+
+    <!--
+      Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
+      user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_name">Имя: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+
+    <!--
+      Total price for the order summary. It will be shown in the format of
+      "Total: $10" where $10 is the price. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_price">\nИтого: <xliff:g id="price" example="$10">%s</xliff:g></string>
+
+    <!--
+          Quantity of coffee cups for the order summary. It will be shown in the format of
+          "Quantity: 2 coffee cups ", where 2 coffee cups is the string with amount of
+          ordered cups. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_quantity">\nКоличество: <xliff:g id="quantity" example="2 coffee cups">%s</xliff:g></string>
+
+    <!--
+     Provides cups quantity string depending on the amount of the coffee cups. It will be shown in the format of
+     "1 coffee cup" for one or "11 coffee cups" for more then one [CHARS LIMIT=NONE]
+    -->
+    <plurals name="numOfCoffeeCups">
+        <item quantity="one">%d стакан кофе</item>
+        <item quantity="few">%d стакана кофе</item>
+        <item quantity="many">%d стаканов кофе</item>
+    </plurals>
+</resources>
