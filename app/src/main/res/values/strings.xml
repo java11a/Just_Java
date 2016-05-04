@@ -62,11 +62,12 @@
     </string>
 
     <!--
-      Quantity of coffee cups for the order summary. It will be shown in the format of
-      "Quantity: 2", where 2 is the number of cups ordered. [CHAR LIMIT=NONE]
+          Quantity of coffee cups for the order summary. It will be shown in the format of
+          "Quantity: 2 coffee cups ", where 2 coffee cups is the string with amount of
+          ordered cups. [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_quantity">
-        \nQuantity: <xliff:g id="quantity" example="2 cups">%s</xliff:g>
+        \nQuantity: <xliff:g id="quantity" example="2 coffee cups">%s</xliff:g>
     </string>
 
     <!--
@@ -88,9 +89,28 @@
     <!-- Answer no. [CHAR LIMIT=NONE] -->
     <string name="answer_no">no</string>
 
-    <!-- Provides cups quantity string depending on the amount of the coffee cups -->
+    <!--
+        Error message for decrement less than minimal quantity to order. It will be shown in the format of
+        "You cannot order less than 2 coffee cups", where 2 coffee cups is the string with amount of
+        ordered cups. [CHARS LIMIT=NONE]
+    -->
+    <string name="err_msg_decrement">
+        You cannot order less than <xliff:g id="quantity" example="2 coffee cups">%s</xliff:g>
+    </string>
+
+    <!--
+        Error message for decrement more than maximal quantity to order. It will be shown in the format of
+        "You cannot order more than 11 coffee cups", where 11 coffee cups is the string with amount of
+        ordered cups. [CHARS LIMIT=NONE]
+    -->
+    <string name="err_msg_increment">
+        You cannot order more than <xliff:g id="quantity" example="11 coffee cups">%s</xliff:g>
+    </string>
+
+    <!-- Provides cups quantity string depending on the amount of the coffee cups. It will be shown in the format of
+     "1 coffee cup" for one or "11 coffee cups" for more then one [CHARS LIMIT=NONE] -->
     <plurals name="numOfCoffeeCups">
-        <item quantity="one">%d cup</item>
-        <item quantity="other">%d cups</item>
+        <item quantity="one">%d coffee cup</item>
+        <item quantity="other">%d coffee cups</item>
     </plurals>
 </resources>

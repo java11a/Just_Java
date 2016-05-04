@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         if(mQuantity==QUANTITY_MIN)
-            Toast.makeText(this, "You cannot order less than " + QUANTITY_MIN + " coffee cup", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.err_msg_decrement, getResources().getQuantityString(R.plurals.numOfCoffeeCups, QUANTITY_MIN, QUANTITY_MIN)), Toast.LENGTH_SHORT).show();
         else
             mQuantity--;
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         if(mQuantity==QUANTITY_MAX)
-            Toast.makeText(this,  "You cannot order more than " + QUANTITY_MAX + " coffees cups", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.err_msg_increment, getResources().getQuantityString(R.plurals.numOfCoffeeCups, QUANTITY_MAX, QUANTITY_MAX)), Toast.LENGTH_SHORT).show();
         else
             mQuantity++;
 
@@ -67,12 +67,12 @@ public class MainActivity extends AppCompatActivity {
      * @param view Order button ref.
      */
     public void submitOrder(View view) {
-        //
+
         String name = null;
         boolean hasWhippedCream = false;
         boolean hasChocolate =false;
 
-
+        //
         EditText txtEd_name = (EditText) findViewById(R.id.txtEd_name);
         if(txtEd_name!=null)
             name = txtEd_name.getText().toString();
@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         orderSummaryIntent.putExtra(Intent.EXTRA_SUBJECT
                 ,getString(R.string.order_summary_email_subject, getApplicationInfo().loadLabel(getPackageManager()).toString(), name));
         orderSummaryIntent.putExtra(Intent.EXTRA_TEXT, orderSummaryMsg);
-
 
         if(orderSummaryIntent.resolveActivity(getPackageManager()) != null){
             startActivity(orderSummaryIntent);
@@ -132,10 +131,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Creates summary of the order
      *
-     * @param name
+     * @param name customer name
      * @param price of the order
-     * @param addWhippedCream
-     * @param addChocolate
+     * @param addWhippedCream to add the whipped cream
+     * @param addChocolate to add the chocolate
      * @return text summary
      */
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
