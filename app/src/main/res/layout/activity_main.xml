@@ -29,7 +29,7 @@
         <CheckBox
             android:id="@+id/chkBx_whippedCream"
             android:text="@string/extra_first"
-            style="@style/ToppingSelectorStyle" />
+            style="@style/ToppingSelectorStyle"/>
 
         <CheckBox
             android:id="@+id/chkBx_chocolate"

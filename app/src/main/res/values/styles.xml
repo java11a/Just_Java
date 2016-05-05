@@ -23,8 +23,8 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">24dp</item>
-        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">24dp</item>
         <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">24dp</item>
         <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">24dp</item>
         <item name="android:textSize">16sp</item>
     </style>
