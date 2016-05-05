@@ -28,25 +28,13 @@
 
         <CheckBox
             android:id="@+id/chkBx_whippedCream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="24dp"
-            android:paddingStart="24dp"
-            android:paddingRight="24dp"
-            android:paddingEnd="24dp"
             android:text="@string/extra_first"
-            android:textSize="16sp" />
+            style="@style/ToppingSelectorStyle" />
 
         <CheckBox
             android:id="@+id/chkBx_chocolate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="24dp"
-            android:paddingStart="24dp"
-            android:paddingRight="24dp"
-            android:paddingEnd="24dp"
             android:text="@string/extra_second"
-            android:textSize="16sp" />
+            style="@style/ToppingSelectorStyle" />
 
         <TextView
             android:text="@string/quantity_title"

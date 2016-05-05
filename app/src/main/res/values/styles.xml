@@ -1,4 +1,5 @@
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -15,6 +16,17 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Style for toppings selectors in order form -->
+    <style name="ToppingSelectorStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">24dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>
