@@ -29,4 +29,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="QuantityChangeButtons">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
 </resources>
